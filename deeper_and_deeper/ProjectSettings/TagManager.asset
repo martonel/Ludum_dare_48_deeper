@@ -9,6 +9,7 @@ TagManager:
   - gameManager
   - coin
   - spawner
+  - music
   layers:
   - Default
   - TransparentFX

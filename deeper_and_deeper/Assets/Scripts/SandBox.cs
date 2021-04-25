@@ -32,6 +32,7 @@ public class SandBox : MonoBehaviour
     {
         if (this.gameObject.tag == "coin")
         {
+            Debug.Log("coinSound is on");
             GameObject[] manager = GameObject.FindGameObjectsWithTag("gameManager");
             if (manager.Length != 0)
             {

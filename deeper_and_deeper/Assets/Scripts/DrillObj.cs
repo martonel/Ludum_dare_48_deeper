@@ -6,7 +6,6 @@ public class DrillObj : MonoBehaviour
 {
     private bool isTrue;
     public GameObject particle;
-
     private void Start()
     {
         isTrue = true;

@@ -10,6 +10,7 @@ public class EnemyMovement : MonoBehaviour
     private bool left_right;
     public Animator anim;
     public GameObject particle;
+    public AudioSource expoldeSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -51,9 +52,11 @@ public class EnemyMovement : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
+            expoldeSound.Play();
             Instantiate(particle.gameObject, other.gameObject.transform.position, Quaternion.identity);
             StartCoroutine(WaitTime());
-            Destroy(other.gameObject); 
+
+            other.gameObject.SetActive(false);
             if (anim != null)
             {
                 anim.SetBool("isTrue", true);
@@ -63,6 +66,10 @@ public class EnemyMovement : MonoBehaviour
 
     IEnumerator WaitTime()
     {
+        yield return new WaitForSeconds(0.1f);
+        expoldeSound.Play();
+        yield return new WaitForSeconds(0.1f);
+        expoldeSound.Play();
         yield return new WaitForSeconds(5.5f);
         int nextBuildIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(nextBuildIndex);

@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
     public GameObject player;
     public GameObject bomb;
     public Animator anim;
+    public AudioSource coinSound;
+
 
     private void Start()
     {
@@ -43,6 +45,7 @@ public class GameManager : MonoBehaviour
         coin += number;
         coinText.text = coin.ToString(); 
         StartCoroutine(FadeIn());
+        coinSound.Play();
     }
     public void SubCoin(int number)
     {

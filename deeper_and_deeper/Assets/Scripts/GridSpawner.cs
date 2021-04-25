@@ -25,7 +25,7 @@ public class GridSpawner : MonoBehaviour
         int rand = Random.Range(0, 3);
         if (isTrue)
         {
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < 3; i++)
             {
                 Instantiate(grids[rand], pos, Quaternion.identity);
                 pos += new Vector3(0, -20, 0);
@@ -38,7 +38,7 @@ public class GridSpawner : MonoBehaviour
                 {
                     Instantiate(backGround, pos, Quaternion.identity);
                 }
-                if(i == 4)
+                if(i == 1)
                 {
                     Instantiate(col, pos, Quaternion.identity);
                 }
@@ -46,7 +46,7 @@ public class GridSpawner : MonoBehaviour
         }
         else
         {
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < 3; i++)
             {
                 Instantiate(grids[rand], pos, Quaternion.identity);
                 pos += new Vector3(0, -20, 0);
@@ -55,7 +55,7 @@ public class GridSpawner : MonoBehaviour
                     rand = Random.Range(0, 3);
                 }
                 lastRand = rand; 
-                if (i == 3)
+                if (i == 1)
                 {
                     Instantiate(col, pos, Quaternion.identity);
                 }
